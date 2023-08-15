@@ -1,4 +1,4 @@
-# salary_cal
+# Universal Calculator
 
 A new Flutter project.
 
