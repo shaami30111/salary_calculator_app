@@ -30,6 +30,11 @@ class _SalaryCalState extends State<SalaryCal> {
   String sourceUnit = 'Select Unit';
   String targetUnit = 'Select Unit';
   String age1 = '';
+  String age2 = '';
+  String age3 = '';
+  String age4 = '';
+  String age5 = '';
+
   String formattedDate = '';
   String endformattedDate = '';
 
@@ -67,6 +72,7 @@ class _SalaryCalState extends State<SalaryCal> {
             ),
           ),
           bottom: const TabBar(
+            isScrollable: true,
             indicatorColor: Colors.indigo,
             labelColor: Colors.white,
             labelStyle: TextStyle(
@@ -548,7 +554,7 @@ class _SalaryCalState extends State<SalaryCal> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Select Date:",
+                        "Select Starting Date:",
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
@@ -587,7 +593,7 @@ class _SalaryCalState extends State<SalaryCal> {
                             ),
                             filled: true,
                             fillColor: textField,
-                            hintText: "Enter Date of Birth",
+                            hintText: "Select Starting Date",
                             prefixIcon: Icon(
                               Icons.calendar_month,
                               size: 22.sp,
@@ -672,7 +678,7 @@ class _SalaryCalState extends State<SalaryCal> {
                             ),
                             filled: true,
                             fillColor: textField,
-                            hintText: "Enter Date of Birth",
+                            hintText: "Select Ending Date",
                             prefixIcon: Icon(
                               Icons.calendar_month,
                               size: 22.sp,
@@ -729,7 +735,7 @@ class _SalaryCalState extends State<SalaryCal> {
                         height: 10.h,
                       ),
                       Container(
-                        height: 120.h,
+                        height: 180.h,
                         width: 380.w,
                         padding: EdgeInsets.all(8),
                         child: Column(
@@ -744,7 +750,31 @@ class _SalaryCalState extends State<SalaryCal> {
                               ),
                             ),
                             Text(
-                              age1,
+                              age2,
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                color: Colors.red[600],
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              age3,
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                color: Colors.red[600],
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              age4,
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                color: Colors.red[600],
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              age5,
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 color: Colors.red[600],
@@ -764,6 +794,7 @@ class _SalaryCalState extends State<SalaryCal> {
                             onPressed: () {
                               if (pickedDateF != null && pickedDateL != null) {
                                 ageCalOne(formattedDate, endformattedDate);
+                                ageCalAll(pickedDateF, pickedDateL);
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
@@ -800,6 +831,10 @@ class _SalaryCalState extends State<SalaryCal> {
                               pickedDateF = null;
                               pickedDateL = null;
                               age1 = '';
+                              age2 = '';
+                              age3 = '';
+                              age4 = '';
+                              age5 = '';
 
                               setState(() {});
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -909,5 +944,13 @@ class _SalaryCalState extends State<SalaryCal> {
     setState(() {});
   }
 
-  void ageCalAll() {}
+  void ageCalAll(DateTime? start, DateTime? end) {
+    Duration diff = end!.difference(start!);
+
+    age2 = (diff.inDays).toString() + " Days ";
+    age3 = (diff.inHours).toString() + " Hours ";
+    age4 = (diff.inMinutes).toString() + " Minutes ";
+    age5 = (diff.inSeconds).toString() + " Seconds ";
+    setState(() {});
+  }
 }
