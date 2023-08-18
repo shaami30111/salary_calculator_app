@@ -22,15 +22,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: [
-            ListView(
-              children: [
-                Lottie.asset('assets/lottie/splash.json'),
-                Lottie.asset('assets/lottie/loader.json'),
-              ],
-            ),
+            Lottie.asset('assets/lottie/splash.json'),
+            Lottie.asset('assets/lottie/loader.json'),
           ],
         ),
       ),
