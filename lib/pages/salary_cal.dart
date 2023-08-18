@@ -477,7 +477,7 @@ class _SalaryCalState extends State<SalaryCal> {
                             "$convertedTemp",
                             style: TextStyle(
                               fontSize: 16.sp,
-                              color: Colors.red[600],
+                              color: Colors.black,
                               fontWeight: FontWeight.w800,
                             ),
                           ),
@@ -720,6 +720,9 @@ class _SalaryCalState extends State<SalaryCal> {
                           },
                         ),
                       ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
                       Row(
                         children: [
                           Text(
@@ -737,7 +740,17 @@ class _SalaryCalState extends State<SalaryCal> {
                       Container(
                         height: 180.h,
                         width: 380.w,
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.3),
+                            border: Border.all(
+                              color: Colors.transparent,
+                            ),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20.r),
+                                topRight: Radius.circular(20.r),
+                                bottomLeft: Radius.circular(20.r),
+                                bottomRight: Radius.circular(20.r))),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -745,7 +758,7 @@ class _SalaryCalState extends State<SalaryCal> {
                               age1,
                               style: TextStyle(
                                 fontSize: 16.sp,
-                                color: Colors.red[600],
+                                color: Colors.black,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -753,7 +766,7 @@ class _SalaryCalState extends State<SalaryCal> {
                               age2,
                               style: TextStyle(
                                 fontSize: 16.sp,
-                                color: Colors.red[600],
+                                color: Colors.black,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -761,7 +774,7 @@ class _SalaryCalState extends State<SalaryCal> {
                               age3,
                               style: TextStyle(
                                 fontSize: 16.sp,
-                                color: Colors.red[600],
+                                color: Colors.black,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -769,7 +782,7 @@ class _SalaryCalState extends State<SalaryCal> {
                               age4,
                               style: TextStyle(
                                 fontSize: 16.sp,
-                                color: Colors.red[600],
+                                color: Colors.black,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -777,7 +790,7 @@ class _SalaryCalState extends State<SalaryCal> {
                               age5,
                               style: TextStyle(
                                 fontSize: 16.sp,
-                                color: Colors.red[600],
+                                color: Colors.black,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
