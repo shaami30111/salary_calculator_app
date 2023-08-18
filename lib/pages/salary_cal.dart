@@ -1,4 +1,3 @@
-import 'package:age_calculator/age_calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -84,7 +83,7 @@ class _SalaryCalState extends State<SalaryCal> {
                 text: "Salary Calculator",
               ),
               Tab(
-                icon: Icon(Icons.device_thermostat_outlined),
+                icon: Icon(Typicons.temperatire),
                 text: "Temprature Converter",
               ),
               Tab(
@@ -371,7 +370,7 @@ class _SalaryCalState extends State<SalaryCal> {
                           fillColor: textField,
                           hintText: "Enter Temprature",
                           prefixIcon: Icon(
-                            Typicons.temperatire,
+                            Icons.device_thermostat_outlined,
                             size: 22.sp,
                             color: Colors.grey,
                           ),
@@ -614,17 +613,13 @@ class _SalaryCalState extends State<SalaryCal> {
                               //pickedDate output format => 2021-03-10 00:00:00.000
                               formattedDate =
                                   DateFormat('yyyy-MM-dd').format(pickedDateF!);
-                              print(
-                                  formattedDate); //formatted date output using intl package =>  2021-03-16
-                              //you can implement different kind of Date Format here according to your requirement
-
                               setState(() {
                                 dateinput.text =
                                     formattedDate; //set output date to TextField value.
                               });
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                   content: Text('Date is not selected'),
                                   duration: Duration(
                                       seconds:
@@ -699,9 +694,6 @@ class _SalaryCalState extends State<SalaryCal> {
                               //pickedDate output format => 2021-03-10 00:00:00.000
                               endformattedDate =
                                   DateFormat('yyyy-MM-dd').format(pickedDateL!);
-                              print(
-                                  endformattedDate); //formatted date output using intl package =>  2021-03-16
-                              //you can implement different kind of Date Format here according to your requirement
 
                               setState(() {
                                 enddateinput.text =
@@ -709,7 +701,7 @@ class _SalaryCalState extends State<SalaryCal> {
                               });
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                   content: Text('Date is not selected'),
                                   duration: Duration(
                                       seconds:
@@ -738,13 +730,13 @@ class _SalaryCalState extends State<SalaryCal> {
                         height: 10.h,
                       ),
                       Container(
-                        height: 180.h,
                         width: 380.w,
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.3),
+                            color: Color.fromARGB(255, 133, 193, 254)
+                                .withOpacity(0.3),
                             border: Border.all(
-                              color: Colors.transparent,
+                              color: Color.fromARGB(0, 25, 96, 195),
                             ),
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(20.r),
@@ -810,7 +802,7 @@ class _SalaryCalState extends State<SalaryCal> {
                                 ageCalAll(pickedDateF, pickedDateL);
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
+                                  const SnackBar(
                                     content: Text('Date is not selected'),
                                     duration: Duration(
                                         seconds:
@@ -830,7 +822,7 @@ class _SalaryCalState extends State<SalaryCal> {
                               "Calculate",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 16,
+                                fontSize: 16.sp,
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.w600,
                               ),
@@ -851,7 +843,7 @@ class _SalaryCalState extends State<SalaryCal> {
 
                               setState(() {});
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                   content: Text('Cleared!'),
                                   duration: Duration(
                                       seconds:
