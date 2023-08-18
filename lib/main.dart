@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salary_cal/pages/salary_cal.dart';
 
+import 'pages/splash_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -22,9 +24,11 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
 
-        home: SalaryCal(),
+        home: const SplashScreen(),
         // home: Test(),
-        routes: {},
+        routes: {
+          '/homePage': (context) => const SalaryCal(),
+        },
       ),
     );
   }
